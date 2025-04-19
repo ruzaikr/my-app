@@ -3,6 +3,7 @@ package org.coda.server;
 import jakarta.ws.rs.core.UriBuilder;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
+import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import java.io.IOException;
@@ -51,6 +52,7 @@ public class Server {
 
         ResourceConfig config = new ResourceConfig()
                 .packages("org.coda.resources")
+                .register(JacksonFeature.class)
                 .property("jersey.config.server.wadl.disableWadl", true);
 
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, config, false);
