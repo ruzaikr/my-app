@@ -43,7 +43,9 @@ public class Server {
         String scheme = System.getenv().getOrDefault(SCHEME_ENV_VAR_NAME, "http");
 
         URI baseUri = UriBuilder
-                .fromUri(scheme + "://" + host)
+                .fromPath("/")
+                .scheme(scheme)
+                .host(host)
                 .port(port)
                 .build();
 
