@@ -15,14 +15,8 @@ public class Bounce {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response bounce(JsonNode payload) {
-        try {
-            return Response
-                    .ok(payload)
-                    .build();
-        } catch (Exception e) {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                    .entity(e.getMessage())
-                    .build();
-        }
+        return Response
+                .ok(payload)
+                .build();
     }
 }
