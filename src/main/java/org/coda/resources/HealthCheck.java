@@ -8,11 +8,12 @@ import jakarta.ws.rs.core.Response;
 
 @Path("/health")
 public class HealthCheck {
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response checkHealth() {
-        return Response
-                .ok()
-                .build();
-    }
+
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response checkHealth() {
+    return Response
+        .ok()
+        .build();
+  }
 }

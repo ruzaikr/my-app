@@ -11,12 +11,12 @@ import jakarta.ws.rs.core.Response;
 @Path("/bounce")
 public class Bounce {
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response bounce(JsonNode payload) {
-        return Response
-                .ok(payload)
-                .build();
-    }
+  @POST
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response bounce(JsonNode payload) {
+    return Response
+        .ok(payload)
+        .build();
+  }
 }
