@@ -38,7 +38,7 @@ public class ServerApp {
         .register(new AbstractBinder() {
           @Override
           protected void configure() {
-            bind(AppConfig.load()).to(AppConfig.class);
+            bind(appConfig).to(AppConfig.class);
           }
         })
         .property("jersey.config.server.wadl.disableWadl", true);
