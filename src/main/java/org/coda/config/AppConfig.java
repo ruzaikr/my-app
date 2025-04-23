@@ -36,7 +36,7 @@ public class AppConfig {
   public int getPort() {
     String portEnvVar = System.getenv("PORT");
     if (portEnvVar == null) {
-      throw new RuntimeException("Environment variable PORT not set."); // @todo: Is this the right type of exception to throw?
+      throw new IllegalStateException("Environment variable PORT not set.");
     }
     return Integer.parseInt(portEnvVar);
   }
