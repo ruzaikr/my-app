@@ -12,10 +12,9 @@ class HealthCheckTest {
 
   @Test
   void checkHealth() {
-    try (Response response = healthCheckResource.checkHealth()) {
-      assertEquals(Status.OK.getStatusCode(), response.getStatus());
-      assertNull(response.getEntity());
-    }
+    Response response = healthCheckResource.checkHealth();
+    assertEquals(Status.OK.getStatusCode(), response.getStatus());
+    assertNull(response.getEntity());
 
   }
 }

@@ -19,9 +19,9 @@ class BounceTest {
                                                         .put("gamerID", "GYUTDTE")
                                                         .put("points", 20);
 
-    try (Response response = bounceResource.bounce(payload)) {
-      assertEquals(Status.OK.getStatusCode(), response.getStatus());
-      assertEquals(payload, response.getEntity());
-    }
+    Response response = bounceResource.bounce(payload);
+    assertEquals(Status.OK.getStatusCode(), response.getStatus());
+    assertEquals(payload, response.getEntity());
+
   }
 }
