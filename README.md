@@ -8,8 +8,6 @@ A simple Jersey + Grizzly HTTP server that exposes two endpoints:
 ## Features
 
 - Lightweight REST API with Jersey on Grizzly
-- JSON serialization via Jackson
-- Centralized exception mapping
 - Simple “bounce” endpoint for payload testing
 
 ## Prerequisites
