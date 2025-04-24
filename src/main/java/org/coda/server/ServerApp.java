@@ -1,6 +1,5 @@
 package org.coda.server;
 
-import jakarta.inject.Singleton;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +30,7 @@ public class ServerApp {
     );
 
     return new ResourceConfig()
-        .packages("org.coda.resources", "org.coda.exception")
+        .packages("org.coda.resources")
         .register(JacksonFeature.class)
         .register(loggingFeature)
         .register(GenericExceptionMapper.class)

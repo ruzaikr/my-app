@@ -3,8 +3,6 @@ package org.coda.config;
 import jakarta.ws.rs.core.UriBuilder;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Properties;
 
 public class AppConfig {
@@ -39,19 +37,6 @@ public class AppConfig {
       throw new IllegalStateException("Environment variable PORT not set.");
     }
     return Integer.parseInt(portEnvVar);
-  }
-
-  public int getConnectTimeoutMs() {
-    return Integer.parseInt(props.getProperty("client.connectTimeoutMs"));
-  }
-
-  public int getReadTimeoutMs() {
-    return Integer.parseInt(props.getProperty("client.readTimeoutMs"));
-  }
-
-  public List<String> getBackends() {
-    String s = props.getProperty("loadbalancer.backends");
-    return Arrays.asList(s.split("\\s*,\\s*"));
   }
 
   public UriBuilder baseUriBuilder() {
